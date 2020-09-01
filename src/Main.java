@@ -7,7 +7,7 @@ public class Main {
         Test test = new Test();
 
         //test.testSinglyLinkedList();
-        test.testDoublyLinkedList();
+        //test.testDoublyLinkedList();
     }
 
 

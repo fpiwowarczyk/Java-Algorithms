@@ -6,6 +6,7 @@ import List.SinglyLinkedList;
 public class Test {
 
     public void testSinglyLinkedList(){
+        System.out.println("Testing Singly Linked List");
         SinglyLinkedList myList = new SinglyLinkedList();
         myList.insertHead(5);
         myList.insertHead(10);
@@ -27,6 +28,7 @@ public class Test {
     }
 
     public void testDoublyLinkedList(){
+        System.out.println("Testing Doubly Linked List");
         DoublyLinkedList myList = new DoublyLinkedList();
         myList.insertHead(1);
         myList.insertHead(2);
