@@ -8,6 +8,7 @@ public class Main {
 
         //test.testSinglyLinkedList();
         //test.testDoublyLinkedList();
+        test.testQueue();
     }
 
 
