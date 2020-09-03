@@ -3,6 +3,8 @@ package test;
 import List.DoublyLinkedList;
 import List.SinglyLinkedList;
 import Queue.Queue;
+import Queue.PriorityQueue;
+import Queue.GenericQueue;
 
 public class Test {
 
@@ -75,8 +77,37 @@ public class Test {
         myQueue.remove();
         myQueue.remove();
         System.out.println(myQueue.isEmpty()); // True is empty
+    }
 
+    public void testPriorityQueue(){
+        PriorityQueue myQueue = new PriorityQueue(4);
 
+        myQueue.insert(10);
+        myQueue.insert(2);
+        myQueue.insert(5);
+        myQueue.insert(4);
+
+        myQueue.printQueue(); // 2 4 5 10 Higher numbers have higher priority
+
+        //Priority queue can be used as a sorting algorithm
+    }
+
+    public void testGenericQueue(){
+        //Also my first try with these type of testing
+        GenericQueue<Integer> myQueue = new GenericQueue<Integer>();
+        System.out.println("Running...");
+        assert myQueue.peek()==null;
+        assert myQueue.poll()==null;
+        assert myQueue.add(1)==true;
+        assert myQueue.peek()==1;
+        assert myQueue.add(2)==true;
+        assert myQueue.peek()==1;
+        assert myQueue.poll()==1;
+        assert myQueue.peek()==2;
+        assert myQueue.poll()==2;
+        assert myQueue.peek()==null;
+        assert myQueue.poll()==null;
+        System.out.println("Finished");
 
     }
 }
