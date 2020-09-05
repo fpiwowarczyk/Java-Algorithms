@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class MinHeap {
     private final List<Node> minHeap;
-
+    //Constructor
     public MinHeap(List<Node> listNodes){
         minHeap = new ArrayList<>();
         for(Node node :listNodes){
@@ -47,6 +47,21 @@ public class MinHeap {
         }
     }
 
+    private void toggleDown(int elementIndex){
+        int key = minHeap.get(elementIndex-1).getKey();
+        boolean wrongOrder = (key > getElementKey(elementIndex*2))||(key > getElementKey(Math.min(elementIndex*2,minHeap.size())));
+        while((2*elementIndex<=minHeap.size())&&wrongOrder){
+            if((2*elementIndex<minHeap.size())&&(getElementKey(elementIndex*2+1) < getElementKey(elementIndex*2))){
+                swap(elementIndex,2*elementIndex+1);
+                elementIndex=2*elementIndex+1;
+            } else {
+                swap(elementIndex,2*elementIndex);
+                elementIndex = 2*elementIndex;
+            }
+            wrongOrder = (key>getElementKey(elementIndex*2))||(key>getElementKey(Math.min(elementIndex*2,minHeap.size())));
+        }
+    }
+
     private Node extractMin(){
         Node result = minHeap.get(0);
         deleteElement(0);
@@ -65,6 +80,11 @@ public class MinHeap {
         if((elementIndex>minHeap.size()) || (elementIndex<=0))
             throw new IndexOutOfBoundsException("Index out of heap range");
         minHeap.set(elementIndex-1,getElement(minHeap.size()));
+        minHeap.remove(minHeap.size());
+        if(getElementKey(elementIndex)<getElementKey((int)Math.floor(elementIndex/2.0))) toggleUp(elementIndex);
+        else if(((2*elementIndex<=minHeap.size())&&(getElementKey(elementIndex)>getElementKey(elementIndex*2))) ||
+                ((2*elementIndex<minHeap.size())&&(getElementKey(elementIndex)>getElementKey(elementIndex*2))))
+            toggleDown(elementIndex);
     }
 
     public Node getElement() {
