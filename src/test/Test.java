@@ -1,5 +1,6 @@
 package test;
 
+import List.ArrayList;
 import List.DoublyLinkedList;
 import List.SinglyLinkedList;
 import Queue.Queue;
@@ -108,6 +109,21 @@ public class Test {
         assert myQueue.peek()==null;
         assert myQueue.poll()==null;
         System.out.println("Finished");
+
+    }
+
+    public void testArrayList(){
+        ArrayList myArray = new ArrayList();
+        for(int i =0;i<15;i++){
+            myArray.push(2*i);
+        }
+        myArray.printArray();
+        for(int i=0;i<8;i++){
+            System.out.println(myArray.pop());
+            myArray.printArray();
+        }
+
+
 
     }
 }

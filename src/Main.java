@@ -10,7 +10,8 @@ public class Main {
         //test.testDoublyLinkedList();
         //test.testQueue();
         //test.testPriorityQueue();
-        test.testGenericQueue();
+        //test.testGenericQueue();
+        test.testArrayList();
     }
 
 
