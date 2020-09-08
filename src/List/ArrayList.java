@@ -38,65 +38,42 @@ public class ArrayList {
             System.out.println("Index bigger than size of array");
         return -1;
     }
-    public void push(int item){
-        nItems++;
-        if(nItems>=size){
-            array = doubleSizeArray();
-            array[nItems]=item;
-        } else if(nItems<size){
-            array[nItems]=item;
-
-        }
-    }
 
     public void insert(int index,int item){
         nItems++;
-        if(nItems<size){ // Push all elements and put item at its index
-            for(int i = index;i<nItems;i++){
-                array[i+1] = array[i];
-            }
-            array[index]=item;
-        } else if (nItems==size){ // Double size of array and put item at its index
-            array=doubleSizeArray();
-            for(int i = index;i<nItems;i++){
-                array[i+1] = array[i];
-            }
-            array[index]=item;
-        }
+        shouldBeDoubled();
+        moveArrayRight(index);
+        array[index]=item;
     }
+
+    public void push(int item){ // Add element at the top of array
+        array[nItems]=item;
+        nItems++;
+        shouldBeDoubled();
+    }
+
 
     public void prepend(int item){ // Insert item at index 0
         nItems++;
-        if(nItems<size){
-            for(int i =0;i<nItems;i++){
-                array[i+1] = array[i];
-            }
+        shouldBeDoubled();
+        moveArrayRight(0);
             array[0] = item;
-        } else if(nItems==size){
-            array= doubleSizeArray();
-            for(int i =0;i<nItems;i++){
-                array[i+1] = array[i];
-            }
-            array[0] = item;
-        }
     }
 
     public int pop(){ // Remove item from the end, return value, if
         int item;
         nItems--;
-        if(nItems==size/2)
-            array = squeezeSizeArray();
         item=array[nItems];
+        shouldBeSqueezed();
         return item;
     }
 
     public void delete(int index){ // Delete item at index
         nItems--;
-        if(nItems==size/2)
-            array = squeezeSizeArray();
-        for(int i=index;i<nItems-1;i++){
-            array[i]=array[i+1];
-        }
+        moveArrayLeft(index);
+        shouldBeSqueezed();
+
+
 
     }
 
@@ -122,6 +99,32 @@ public class ArrayList {
         for(int i=0;i<nItems;i++){
             System.out.print(array[i]+"->");
         }
+        System.out.println();
+    }
+    // Move whole array to the right from start el
+    private void moveArrayRight(int start){
+        int[] temp_arr;
+        temp_arr=array.clone();
+        for(int i =start;i<nItems;i++){
+
+            array[i+1]=temp_arr[i];
+        }
+    }
+
+    private void moveArrayLeft(int start){
+        for(int i=start;i<nItems;i++){
+            array[i]=array[i+1];
+        }
+    }
+    // Checking if array should be doubled in size
+    private void shouldBeDoubled(){
+        if(nItems>=size){
+            array = doubleSizeArray();
+        }
+    }
+    private void shouldBeSqueezed(){
+        if(nItems<=size/2)
+            array = squeezeSizeArray();
     }
 
     private int[] doubleSizeArray(){
@@ -137,9 +140,13 @@ public class ArrayList {
     private int[] squeezeSizeArray(){
         int[] new_arr;
         new_arr = new int[size/2];
+        for(int i=0;i<nItems;i++){
+            new_arr[i]=array[i];
+        }
         size = size/2;
         return new_arr;
     }
+
 
 
 }

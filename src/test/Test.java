@@ -114,16 +114,30 @@ public class Test {
 
     public void testArrayList(){
         ArrayList myArray = new ArrayList();
-        for(int i =0;i<15;i++){
-            myArray.push(2*i);
+        for(int i =0;i<32;i++){ // Test pushing into array
+            myArray.push(i);
+        }
+        //myArray.printArray();
+        for(int i =0;i<20;i++){ // Test pop elements and resizing it
+            myArray.pop();
         }
         myArray.printArray();
-        for(int i=0;i<8;i++){
-            System.out.println(myArray.pop());
-            myArray.printArray();
-        }
 
+        myArray.delete(3); // Test deleting of index
+        myArray.printArray();
 
+        myArray.remove(2); // Remove item
+        myArray.printArray();
+
+        System.out.println("Index of item 7 is:"+myArray.find(7));
+        myArray.delete(myArray.find(7)-1);
+        System.out.println("Index of item 7 is:"+myArray.find(7));
+
+        myArray.prepend(3);  // Test adding element at the start
+        myArray.printArray();
+
+        myArray.insert(3,3);// Test inserting element
+        myArray.printArray();
 
     }
 }
