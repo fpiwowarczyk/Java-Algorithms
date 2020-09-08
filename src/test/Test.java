@@ -12,23 +12,8 @@ public class Test {
     public void testSinglyLinkedList(){
         System.out.println("Testing Singly Linked List");
         SinglyLinkedList myList = new SinglyLinkedList();
-        myList.insertHead(5);
-        myList.insertHead(10);
-        myList.insertHead(99);
-
-        myList.display();
-
-        myList.deleteHead();
-
-        myList.display();
-
-        myList.insertNth(30,2);
-
-        myList.display();
-
-        myList.deleteNth(2);
-
-        myList.display();
+        myList.pushFront(1);
+        myList.printLinkedList();
     }
 
     public void testDoublyLinkedList(){
@@ -113,6 +98,7 @@ public class Test {
     }
 
     public void testArrayList(){
+        System.out.println("Testing ArrayList");
         ArrayList myArray = new ArrayList();
         for(int i =0;i<32;i++){ // Test pushing into array
             myArray.push(i);
