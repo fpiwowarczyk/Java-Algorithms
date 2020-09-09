@@ -12,8 +12,45 @@ public class Test {
     public void testSinglyLinkedList(){
         System.out.println("Testing Singly Linked List");
         SinglyLinkedList myList = new SinglyLinkedList();
-        myList.pushFront(1);
+        for(int i =0;i<=6;i++){
+            myList.pushFront(i); // Add items on front of list
+        }
+        for(int i =6;i>=0;i--){
+            myList.pushBack(i); // Add items on back
+
+        }
         myList.printLinkedList();
+        System.out.println("Front item of list:"+myList.front());
+        System.out.println("Back item of list:"+myList.back());
+
+        for(int i =0;i<=6;i++){
+            myList.popFront(); // Add items on front of list
+        }
+        myList.printLinkedList();
+        System.out.println("Last element value was:"+myList.popBack());
+        myList.printLinkedList();
+
+        myList.insert(1,10);
+        myList.insert(0,10);
+        myList.printLinkedList();
+
+        myList.erase(0);
+        myList.erase(1);
+        myList.printLinkedList();
+
+        System.out.println("3rd value from the end is:"+myList.valueNthFromEnd(3));
+
+        myList.removeValue(3);
+        myList.printLinkedList();
+
+        myList.insert(3,3);
+        myList.printLinkedList();
+
+        myList.reverse();
+        myList.printLinkedList();
+
+
+
     }
 
     public void testDoublyLinkedList(){

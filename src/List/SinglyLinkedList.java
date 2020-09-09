@@ -15,7 +15,12 @@ public class SinglyLinkedList {
     private int nItems;
 
     public SinglyLinkedList(){
-        head=null;
+        head=new Node();
+        nItems=0;
+    }
+    public SinglyLinkedList(Node head,int size){
+        this.head = head;
+        nItems = 0;
     }
     public int size(){return nItems;} // Return size of LinkedList
     public boolean isEmpty(){ return nItems==0;} // Return true if list is empty
@@ -55,12 +60,13 @@ public class SinglyLinkedList {
             return -1;
         }
         Node current=findEnd();
-        while(secondLast.next == current){
+        while(secondLast.next != current){
             secondLast = secondLast.next;
         }
+        int item = secondLast.next.value;
         secondLast.next=null;
         nItems--;
-        return current.value;
+        return item;
     }
     // Add item at the end
     public void pushFront(int value){
@@ -129,23 +135,30 @@ public class SinglyLinkedList {
     }
     // reverse the list
     public void reverse(){
-        Node current = head.next;
-        while (current.next.next!=null){
-            current.next.next = current;
-            current = current.next;
+        Node current=head;
+        Node prev=null;
+        Node next = null;
+        while(current != null){
+            next = current.next;
+            current.next=prev;
+            prev=current;
+            current=next;
         }
-        current = current.next;
-        head.next=current;
+        head = prev;
+
     }
     // Remove first item with this value return true if it finds that value
-    public boolean removeValue(int value){
-        Node current = head;
+    public boolean removeValue(int valueToRemove){
+        Node current = head.next;
         for(int i=0;i<size();i++){
-            if(current.value==value){
+
+            if(current.value==valueToRemove){
                 // Before : oneBefore-> Current -> next
                 // After : oneBefore -> next
                 Node oneBefore = goToIndex(i-1);
+                System.out.println(oneBefore.value);
                 oneBefore.next=current.next;
+                nItems--;
                 return true;
             } else {
                 current= current.next;
@@ -157,10 +170,11 @@ public class SinglyLinkedList {
     public void printLinkedList(){
         Node current = head.next;
         System.out.println("Size:"+size());
-        while(current.next!=null){
-            System.out.println(current.value+"->");
+        while(current!=null){
+            System.out.print(current.value+"->");
             current=current.next;
         }
+        System.out.println();
     }
     private Node findEnd(){
         Node current = head;
@@ -182,12 +196,15 @@ public class SinglyLinkedList {
     class Node {
         public int value;
         public Node next;
-        public Node(int value){
-            this.value = value;
-            this.next = null;
-        }
         public Node(){
-            this.next=null;
+
+        }
+        public Node(int value){
+            this(value,null);
+        }
+        public Node(int value,Node next){
+            this.value = value;
+            this.next = next;
         }
         public int getValue() {
             return value;
