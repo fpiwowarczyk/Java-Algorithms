@@ -14,7 +14,7 @@ That repo has my own implementations of Data Structures in Java. Currently, it h
 Description of Data Structures 
 
 
-##ArrayList/Vector
+## ArrayList/Vector
 ArrayList is a dynamic array that means u don't have to pass size of it.
 
 Functions in it:
@@ -31,11 +31,11 @@ Functions in it:
 - find(item) - return index of first item with that value, -1 if not found.
 
 
-###Time
+### Time
 * O(1) - to add/remove at the end(if these are  no allocations for more space), index or update
 * O(n) - to insert/remove element from middle
 
-##SinglyLinkedList
+## SinglyLinkedList
 SinglyLinked list is made from two classes: Node and SinglyLinkedList. Node hold value and pointer to the next 
 Node. U can search it only in one direction. I implemented it but heard that
 it is better than vector only with like 100k elements, but it was pretty challenging
@@ -57,7 +57,7 @@ Functions in it:
 - reverse() - reverse the list[!It isn't working correctly yet!]
 -remove_value(value) - removes first item in the list with value
 
-###Time 
+### Time 
 
 * O(1) - Insert,Delete
 * O(n) - Access, Search
