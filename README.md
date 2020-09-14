@@ -8,7 +8,7 @@ That repo has my own implementations of Data Structures in Java. Currently, it h
 - LinkedList,
 - Queue,
 - Heap,
-- Tree
+- Stack
 
 # Data Structures
 Description of Data Structures 
@@ -17,7 +17,7 @@ Description of Data Structures
 ## ArrayList/Vector
 ArrayList is a dynamic array that means u don't have to pass size of it.
 
-Functions in it:
+### Functions:
 -  Size()- get number of elements in it.
 - capacity() - actual size of array (but it will change dynamic).
 - isEmpty() - return true if there are 0 elements.
@@ -41,7 +41,7 @@ Node. U can search it only in one direction. I implemented it but heard that
 it is better than vector only with like 100k elements, but it was pretty challenging
 to implement.
 
-Functions in it:
+### Functions:
 - size() -return size of List
 - isEmpty() - return true if there are no elements
 - valueAt(index) - return value at given index
@@ -61,3 +61,20 @@ Functions in it:
 
 * O(1) - Insert,Delete
 * O(n) - Access, Search
+
+## Stack
+Stack is a data structure with all operations with complexity of O(1).
+You can only add and remove first element in the stack.
+ It is implemented with fixed size.A simple stack is super easy in implementation and use.
+
+### Functions:
+- pop() - return and remove first element
+- push(value) - add new first element of value
+- front() - return fist element
+- getSize() - return how many elements are in stack
+- getCapacity() - return max size of stack
+- isFull()- return true if stack is full
+- isEmplty() - return true if stack is emplty
+
+### Time
+*O(1) - Everything
