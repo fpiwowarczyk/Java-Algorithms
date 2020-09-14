@@ -4,7 +4,7 @@ package Stack;
 * Stack.Stack is a data struct that lets you only
 * put element in the front and you can only remove
 * first front element. Its gonna be fixed size stack
-*
+* LIFO - Last In First Out 
  */
 public class Stack {
     int[] array;

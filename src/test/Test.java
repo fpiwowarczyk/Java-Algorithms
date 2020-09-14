@@ -3,9 +3,8 @@ package test;
 import List.ArrayList;
 import List.DoublyLinkedList;
 import List.SinglyLinkedList;
-import Queue.Queue;
-import Queue.PriorityQueue;
-import Queue.GenericQueue;
+import Queue.QueueArray;
+import Queue.QueueLinkedList;
 
 public class Test {
 
@@ -77,62 +76,6 @@ public class Test {
         myList.display();
     }
 
-    public void testQueue(){
-        Queue myQueue = new Queue(4);
-
-        myQueue.insert(10);
-        myQueue.insert(4);
-        myQueue.insert(1);
-        myQueue.insert(99);
-        // [10(first to remove),4,1,99(last to remove)]
-        System.out.println(myQueue.isFull()); // True
-
-        System.out.println(myQueue.peekFront()); // 10 Should be front
-        System.out.println(myQueue.remove()); // Print 10 and remove 10
-        System.out.println(myQueue.peekFront()); // Now 4 will be front
-        System.out.println(myQueue.peekBack()); // 99 Should be back
-        myQueue.insert(13); //new back is 13
-        System.out.println(myQueue.peekBack()); // Print 13
-
-        System.out.println(myQueue.isEmpty()); // False isn't empty
-        myQueue.remove();
-        myQueue.remove();
-        myQueue.remove();
-        myQueue.remove();
-        System.out.println(myQueue.isEmpty()); // True is empty
-    }
-
-    public void testPriorityQueue(){
-        PriorityQueue myQueue = new PriorityQueue(4);
-
-        myQueue.insert(10);
-        myQueue.insert(2);
-        myQueue.insert(5);
-        myQueue.insert(4);
-
-        myQueue.printQueue(); // 2 4 5 10 Higher numbers have higher priority
-
-        //Priority queue can be used as a sorting algorithm
-    }
-
-    public void testGenericQueue(){
-        //Also my first try with these type of testing
-        GenericQueue<Integer> myQueue = new GenericQueue<Integer>();
-        System.out.println("Running...");
-        assert myQueue.peek()==null;
-        assert myQueue.poll()==null;
-        assert myQueue.add(1)==true;
-        assert myQueue.peek()==1;
-        assert myQueue.add(2)==true;
-        assert myQueue.peek()==1;
-        assert myQueue.poll()==1;
-        assert myQueue.peek()==2;
-        assert myQueue.poll()==2;
-        assert myQueue.peek()==null;
-        assert myQueue.poll()==null;
-        System.out.println("Finished");
-
-    }
 
     public void testArrayList(){
         System.out.println("Testing ArrayList");
@@ -162,5 +105,49 @@ public class Test {
         myArray.insert(3,3);// Test inserting element
         myArray.printArray();
 
+    }
+
+    public void testQueueArray(){
+        QueueArray myQueue = new QueueArray(5);
+        System.out.println("Testing queue");
+        assert myQueue.isEmpty() == true;
+        assert myQueue.isFull() == false;
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        myQueue.enqueue(4);
+        myQueue.enqueue(5);
+        assert myQueue.isFull()==true;
+        assert myQueue.dequeue()==1;
+        assert myQueue.dequeue()==2;
+        assert myQueue.dequeue()==3;
+        assert myQueue.dequeue()==4;
+        assert myQueue.dequeue()==5;
+        assert myQueue.isEmpty()==true;
+        System.out.println("Queue tests done!");
+
+
+    }
+
+    public void testQueueLinkedList(){
+        QueueLinkedList myQueue = new QueueLinkedList();
+
+        System.out.println("Testing QueueLinkedList!");
+
+        assert myQueue.size()==0;
+        assert myQueue.isEmpty()==true;
+        myQueue.enqueue(1);
+        myQueue.enqueue(2);
+        myQueue.enqueue(3);
+        myQueue.enqueue(4);
+        myQueue.enqueue(5);
+        assert myQueue.isEmpty()==false;
+        assert myQueue.dequeue()==1;
+        assert myQueue.dequeue()==2;
+        assert myQueue.dequeue()==3;
+        assert myQueue.dequeue()==4;
+        assert myQueue.dequeue()==5;
+        assert myQueue.isEmpty()==true;
+        System.out.println("Tests Done!");
     }
 }

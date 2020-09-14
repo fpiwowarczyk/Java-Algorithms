@@ -6,9 +6,11 @@ add other stuff like sorting algorithms implementations.
 That repo has my own implementations of Data Structures in Java. Currently, it has:
 - ArrayList,
 - LinkedList,
+- Stack,
 - Queue,
-- Heap,
-- Stack
+- Heap, 
+- Bag
+
 
 # Data Structures
 Description of Data Structures 
@@ -66,7 +68,7 @@ to implement.
 Stack is a data structure with all operations with complexity of O(1).
 You can only add and remove first element in the stack.
  It is implemented with fixed size.A simple stack is super easy in implementation and use.
-
+Stack is LIFO - Last in first out.
 ### Functions:
 - pop() - return and remove first element
 - push(value) - add new first element of value
@@ -74,7 +76,33 @@ You can only add and remove first element in the stack.
 - getSize() - return how many elements are in stack
 - getCapacity() - return max size of stack
 - isFull()- return true if stack is full
-- isEmplty() - return true if stack is emplty
+- isEmpty() - return true if stack is empty
 
 ### Time
 *O(1) - Everything
+
+## QueueArray
+It is a queue FIFO(first in first out) with fixed size and to implement 
+that structure I used Array and two pointers read and write. If you write
+something write is incremented as well as read is incremented when you read.
+
+### Functions:
+- enqueue() - add element to queue
+- dequeue() - remove last element from queue
+- size() - return how many items are in queue
+- capacity() - return capacity of queue
+- isFull() - return true when queue is full
+- isEmpty - return true when queue is empty
+
+### Time
+O(1) - Everything
+
+## QueueLinkedList
+Implementation of queue FIFO with LinkedList. It have dynamic size.
+
+### Functions:
+- enqueue() - add element to queue
+- dequeue() - remove last element from queue
+- size() - return how many items are in queue
+- capacity() - return capacity of queue
+- isEmpty - return true when queue is empty
