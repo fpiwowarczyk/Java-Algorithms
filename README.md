@@ -9,6 +9,7 @@ That repo has my own implementations of Data Structures in Java. Currently, it h
 - Stack,
 - Queue,
 - Heap, 
+- HashMapLinearProbing,
 - Bag
 
 
@@ -106,3 +107,23 @@ Implementation of queue FIFO with LinkedList. It have dynamic size.
 - size() - return how many items are in queue
 - capacity() - return capacity of queue
 - isEmpty - return true when queue is empty
+
+## HashMapLinearProbing 
+It is Data Structure where values are store in pairs of keys and values. 
+You insert key and hashmap produce for it unique value and stores it in array 
+at that index. It is super use full.
+
+### Functions:
+- HashMapLinearProbing(hSize)- constructor of HashMap with initial size of it
+- hashFunction(key) - produces value for key
+- insertHash(key) - inert key into array.
+- deleteHash(key) - find and delete given key
+- displayHashTable() - display every bucket of hashtable. Usefull for testing
+- exists(key) - check if key is already in table if it is return its index.
+- doubleTable() - doubleSize of Array 
+- checkLoadFactor() - check how much table is filled if it is bigger than 0.7
+size will be doubled.
+- isFull() - check if table is full
+- isEmpty() - check if table is empty 
+- isTrulyFull() - check if table is full, but it iterates through whole table and check that
+- isTrulyEmpty()- check if table is full, but it iterates through whole table and check that
