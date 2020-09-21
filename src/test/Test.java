@@ -1,5 +1,6 @@
 package test;
 
+import Hash.HashMapLinearProbing;
 import List.ArrayList;
 import List.DoublyLinkedList;
 import List.SinglyLinkedList;
@@ -149,5 +150,25 @@ public class Test {
         assert myQueue.dequeue()==5;
         assert myQueue.isEmpty()==true;
         System.out.println("Tests Done!");
+    }
+
+    public void testHashMap(){
+        HashMapLinearProbing myTable = new HashMapLinearProbing(12);
+        myTable.displayHashTable();
+        assert myTable.isEmpty()==true;
+        assert myTable.isEmpty()==false;
+        myTable.checkLoadFactor();
+        myTable.insertHash(101);
+        myTable.insertHash(999);
+        myTable.insertHash(-32);
+        myTable.insertHash(12);
+        myTable.displayHashTable();
+
+        myTable.deleteHash(-32);
+        myTable.displayHashTable();
+        myTable.checkLoadFactor();
+        System.out.println("Find key of value 101 it is on index:"+ myTable.exist(101));
+
+
     }
 }

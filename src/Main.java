@@ -13,7 +13,8 @@ public class Main {
         //test.testGenericQueue();
         //test.testArrayList();
         //test.testQueueArray();
-        test.testQueueLinkedList();
+        //test.testQueueLinkedList();
+        test.testHashMap();
     }
 
 
