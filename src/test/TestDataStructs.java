@@ -7,7 +7,7 @@ import DataStructs.List.SinglyLinkedList;
 import DataStructs.Queue.QueueArray;
 import DataStructs.Queue.QueueLinkedList;
 
-public class Test {
+public class TestDataStructs {
 
     public void testSinglyLinkedList(){
         System.out.println("Testing Singly Linked DataStructs.List");

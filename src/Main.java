@@ -1,9 +1,11 @@
-import test.Test;
+import test.TestDataStructs;
+import test.TestSearch;
 
 public class Main {
 
     public static void main(String[] args) {
-        Test test = new Test();
+        TestDataStructs testDataStructs = new TestDataStructs();
+        TestSearch testSearch = new TestSearch();
 
         //test.testSinglyLinkedList();
         //test.testDoublyLinkedList();
@@ -13,7 +15,10 @@ public class Main {
         //test.testArrayList();
         //test.testQueueArray();
         //test.testQueueLinkedList();
-        test.testHashMap();
+        //test.testHashMap();
+
+        testSearch.testBinarySearch();
+
     }
 
 

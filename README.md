@@ -3,7 +3,7 @@ My repo for implementing Algorithms to practice Java coding. Later I will
 add other stuff like sorting algorithms implementations.
 
 ## What it has?
-That repo has my own implementations of Data Structures in Java. Currently, it has:
+### Data Structures:
 - ArrayList,
 - LinkedList,
 - Stack,
@@ -11,6 +11,9 @@ That repo has my own implementations of Data Structures in Java. Currently, it h
 - Heap, 
 - HashMapLinearProbing,
 - Bag
+
+### Search:
+- BinarySearch
 
 
 # Data Structures
@@ -126,3 +129,15 @@ size will be doubled.
 - isEmpty() - check if table is empty 
 - isTrulyFull() - check if table is full, but it iterates through whole table and check that
 - isTrulyEmpty()- check if table is full, but it iterates through whole table and check that
+
+
+# Search
+Description of search
+
+## BinarySearch
+To find value you looking for your need to use function find(array,key). Where array need to be 
+a sorted array of integers and key need to be in that array. Function will return index of key.
+BinarySearch split array and check in which half is our value than do the same job until it find our value.
+
+### Times 
+- O(log(n))
