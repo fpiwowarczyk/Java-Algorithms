@@ -1,16 +1,16 @@
 package test;
 
-import Hash.HashMapLinearProbing;
-import List.ArrayList;
-import List.DoublyLinkedList;
-import List.SinglyLinkedList;
-import Queue.QueueArray;
-import Queue.QueueLinkedList;
+import DataStructs.Hash.HashMapLinearProbing;
+import DataStructs.List.ArrayList;
+import DataStructs.List.DoublyLinkedList;
+import DataStructs.List.SinglyLinkedList;
+import DataStructs.Queue.QueueArray;
+import DataStructs.Queue.QueueLinkedList;
 
 public class Test {
 
     public void testSinglyLinkedList(){
-        System.out.println("Testing Singly Linked List");
+        System.out.println("Testing Singly Linked DataStructs.List");
         SinglyLinkedList myList = new SinglyLinkedList();
         for(int i =0;i<=6;i++){
             myList.pushFront(i); // Add items on front of list
@@ -54,7 +54,7 @@ public class Test {
     }
 
     public void testDoublyLinkedList(){
-        System.out.println("Testing Doubly Linked List");
+        System.out.println("Testing Doubly Linked DataStructs.List");
         DoublyLinkedList myList = new DoublyLinkedList();
         myList.insertHead(1);
         myList.insertHead(2);
@@ -125,7 +125,7 @@ public class Test {
         assert myQueue.dequeue()==4;
         assert myQueue.dequeue()==5;
         assert myQueue.isEmpty()==true;
-        System.out.println("Queue tests done!");
+        System.out.println("DataStructs.Queue tests done!");
 
 
     }

@@ -1,5 +1,5 @@
-# Java Data Structures
-My repo for implementing Data Structures to practice Java coding. Later i will
+# Java Algorithms Implementation
+My repo for implementing Algorithms to practice Java coding. Later I will
 add other stuff like sorting algorithms implementations.
 
 ## What it has?
@@ -45,7 +45,7 @@ it is better than vector only with like 100k elements, but it was pretty challen
 to implement.
 
 ### Functions:
-- size() -return size of List
+- size() -return size of DList
 - isEmpty() - return true if there are no elements
 - valueAt(index) - return value at given index
 - pushFront() - add an element at front of list
@@ -68,8 +68,7 @@ to implement.
 ## Stack
 Stack is a data structure with all operations with complexity of O(1).
 You can only add and remove first element in the stack.
- It is implemented with fixed size.A simple stack is super easy in implementation and use.
-Stack is LIFO - Last in first out.
+ It is implemented with fixed size.A simple stack is super easy in implementation and use.Stack is LIFO - Last in first out.
 ### Functions:
 - pop() - return and remove first element
 - push(value) - add new first element of value

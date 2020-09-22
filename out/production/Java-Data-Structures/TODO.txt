@@ -1,5 +1,0 @@
-
-1. Implement Stack with linked list
-
-2. Implement Queue
-
