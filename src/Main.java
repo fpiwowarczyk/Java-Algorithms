@@ -7,17 +7,9 @@ public class Main {
         TestDataStructs testDataStructs = new TestDataStructs();
         TestSearch testSearch = new TestSearch();
 
-        //test.testSinglyLinkedList();
-        //test.testDoublyLinkedList();
-        //test.testQueue();
-        //test.testPriorityQueue();
-        //test.testGenericQueue();
-        //test.testArrayList();
-        //test.testQueueArray();
-        //test.testQueueLinkedList();
-        //test.testHashMap();
+        testDataStructs.testBinarySearchTree();
 
-        testSearch.testBinarySearch();
+        //testSearch.testBinarySearch();
 
     }
 

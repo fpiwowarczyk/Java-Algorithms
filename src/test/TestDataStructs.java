@@ -6,6 +6,7 @@ import DataStructs.List.DoublyLinkedList;
 import DataStructs.List.SinglyLinkedList;
 import DataStructs.Queue.QueueArray;
 import DataStructs.Queue.QueueLinkedList;
+import DataStructs.Tree.BinarySearchTree;
 
 public class TestDataStructs {
 
@@ -168,6 +169,10 @@ public class TestDataStructs {
         myTable.displayHashTable();
         myTable.checkLoadFactor();
         System.out.println("Find key of value 101 it is on index:"+ myTable.exist(101));
+    }
+
+    public void testBinarySearchTree(){
+        BinarySearchTree tree = new BinarySearchTree();
 
 
     }
